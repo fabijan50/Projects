@@ -1,0 +1,242 @@
+package com.example.ledmatrixpanelcontroller;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    public boolean isgreen1=true,isgreen2=true,isgreen3=true,isgreen4=true,isgreen5=true,isgreen6=true,isgreen7=true,isgreen8=true,isgreen9=true,
+    isgreen10=true;
+    public String ipstring = "192.168.4.1";
+    Intent intent;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        this.getSupportActionBar().hide();
+        TextView txtView = (TextView) findViewById(R.id.myip);
+        txtView.setText(ipstring);
+
+        ImageView frontcaution = (ImageView) findViewById(R.id.frontcaution);
+        frontcaution.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://"+ipstring+":8080/action?type=f1");
+                if (isgreen1) {
+                    ImageView fled1 =(ImageView)findViewById(R.id.fled1);
+                    fled1.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView fled1 =(ImageView)findViewById(R.id.fled1);
+                    fled1.setVisibility(View.INVISIBLE);
+                }
+                isgreen1 = !isgreen1;
+
+            }
+        });
+        ImageView frontAL = (ImageView) findViewById(R.id.frontarrowsleft);
+        frontAL.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=f2");
+                if (isgreen2) {
+                    ImageView fled2 =(ImageView)findViewById(R.id.fled2);
+                    fled2.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView fled2 =(ImageView)findViewById(R.id.fled2);
+                    fled2.setVisibility(View.INVISIBLE);
+                }
+                isgreen2 = !isgreen2;
+            }
+        });
+        ImageView frontAR = (ImageView) findViewById(R.id.frontarrowsright);
+        frontAR.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=f3");
+                if (isgreen3) {
+                    ImageView fled3 =(ImageView)findViewById(R.id.fled3);
+                    fled3.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView fled1 =(ImageView)findViewById(R.id.fled3);
+                    fled1.setVisibility(View.INVISIBLE);
+                }
+                isgreen3 = !isgreen3;
+            }
+        });
+
+        ImageView backcaution = (ImageView) findViewById(R.id.backcaution);
+        backcaution.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=b1");
+                if (isgreen4) {
+                    ImageView bled1 =(ImageView)findViewById(R.id.bled1);
+                    bled1.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView bled1 =(ImageView)findViewById(R.id.bled1);
+                    bled1.setVisibility(View.INVISIBLE);
+                }
+                isgreen4 = !isgreen4;
+            }
+        });
+        ImageView backcar = (ImageView) findViewById(R.id.backcarovertake);
+        backcar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=b2");
+                if (isgreen5) {
+                    ImageView bled2 =(ImageView)findViewById(R.id.bled2);
+                    bled2.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView bled2 =(ImageView)findViewById(R.id.bled2);
+                    bled2.setVisibility(View.INVISIBLE);
+                }
+                isgreen5 = !isgreen5;
+            }
+        });
+        ImageView backtruck = (ImageView) findViewById(R.id.backtruckovertake);
+        backtruck.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=b3");
+                if (isgreen6) {
+                    ImageView bled3 =(ImageView)findViewById(R.id.bled3);
+                    bled3.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView bled3 =(ImageView)findViewById(R.id.bled3);
+                    bled3.setVisibility(View.INVISIBLE);
+                }
+                isgreen6 = !isgreen6;
+            }
+        });
+        ImageView backAR = (ImageView) findViewById(R.id.backarrowsright);
+        backAR.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=b4");
+                if (isgreen7) {
+                    ImageView bled4 =(ImageView)findViewById(R.id.bled4);
+                    bled4.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView bled4 =(ImageView)findViewById(R.id.bled4);
+                    bled4.setVisibility(View.INVISIBLE);
+                }
+                isgreen7 = !isgreen7;
+            }
+        });
+        ImageView backAL = (ImageView) findViewById(R.id.backarrowsleft);
+        backAL.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=b5");
+                if (isgreen8) {
+                    ImageView bled5 =(ImageView)findViewById(R.id.bled5);
+                    bled5.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView bled5 =(ImageView)findViewById(R.id.bled5);
+                    bled5.setVisibility(View.INVISIBLE);
+                }
+                isgreen8 = !isgreen8;
+            }
+        });
+        ImageView backKD = (ImageView) findViewById(R.id.backkeepdistance);
+        backKD.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=b6");
+                if (isgreen9) {
+                    ImageView bled6 =(ImageView)findViewById(R.id.bled6);
+                    bled6.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView bled6 =(ImageView)findViewById(R.id.bled6);
+                    bled6.setVisibility(View.INVISIBLE);
+                }
+                isgreen9 = !isgreen9;
+            }
+        });
+        ImageView beacon = (ImageView) findViewById(R.id.beacon);
+        beacon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=beacon");
+                if (isgreen10) {
+                    ImageView lbeacon =(ImageView)findViewById(R.id.ledbeacon);
+                    lbeacon.setVisibility(View.VISIBLE);
+                }
+                else{
+                    ImageView lbeacon =(ImageView)findViewById(R.id.ledbeacon);
+                    lbeacon.setVisibility(View.INVISIBLE);
+                }
+                isgreen10 = !isgreen10;
+            }
+        });
+        ImageView motorup = (ImageView) findViewById(R.id.arrowup);
+        motorup.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=motorup");
+
+                ImageView down =(ImageView)findViewById(R.id.ledmotordown);
+                down.setVisibility(View.INVISIBLE);
+                ImageView up =(ImageView)findViewById(R.id.ledmotorup);
+                up.setVisibility(View.VISIBLE);
+            }
+        });
+        ImageView motordown = (ImageView) findViewById(R.id.arrowdown);
+        motordown.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WebView myWebView = (WebView) findViewById(R.id.webview);
+                myWebView.loadUrl("http://" + ipstring + ":8080/action?type=motordown");
+
+                ImageView up =(ImageView)findViewById(R.id.ledmotorup);
+                up.setVisibility(View.INVISIBLE);
+                ImageView down =(ImageView)findViewById(R.id.ledmotordown);
+                down.setVisibility(View.VISIBLE);
+            }
+        });
+
+        ImageView mysettings = (ImageView) findViewById(R.id.settingwheel);
+        mysettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSettingsactivity();
+            }
+        });
+
+    }
+    public void openSettingsactivity(){
+        intent = new Intent(this, settingsactivity.class);
+        startActivityForResult(intent,12345);
+    }
+    @Override
+    public void onActivityResult(int req_code, int res_code, Intent data) {
+
+        super.onActivityResult(req_code, res_code, data);
+        ipstring = data.getStringExtra("ipstring");
+        TextView txtView = (TextView) findViewById(R.id.myip);
+        txtView.setText(ipstring);
+    }
+}
